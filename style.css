@@ -13,7 +13,7 @@ p {
 }
 
 img {
-    max-width: 100%;
+    max-width: 250px;
     height: auto;
 }
 
@@ -23,7 +23,7 @@ h2 {
 
 footer {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 25px;
 }
 
 .langs {
@@ -31,6 +31,7 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
 div {
     margin: 10px;
 }
