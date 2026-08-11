@@ -11,7 +11,5 @@ create-pages:
   before_script:
     - ":"
   script:
-    - --rm \   --volume "$PWD:/srv/jekyll" \   jekyll/jekyll
-      \   jekyll build
-    - --rm \   --volume "$PWD:/srv/jekyll" \   --publish 4000:4000
-      \   --publish 35729:35729 \   jekyll/jekyll \   jekyll serve
+    - jekyll build
+    - jekyll serve
