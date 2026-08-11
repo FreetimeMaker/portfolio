@@ -4,7 +4,7 @@ pages:
     - mkdir -p public
 
     - cp -r *.html *.css public/
-    - cp -r images/
+    - cp -r images/ public/
 
   artifacts:
     paths:
