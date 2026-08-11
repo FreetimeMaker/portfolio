@@ -1,5 +1,4 @@
 # The Docker image that will be used to build your app
-image: jekyll
 create-pages:
   pages:
     # The folder that contains the files to be exposed at the Page URL
@@ -12,7 +11,7 @@ create-pages:
   before_script:
     - ":"
   script:
-    - docker run --rm \   --volume "$PWD:/srv/jekyll" \   jekyll/jekyll
+    - run --rm \   --volume "$PWD:/srv/jekyll" \   jekyll/jekyll
       \   jekyll build
-    - docker run --rm \   --volume "$PWD:/srv/jekyll" \   --publish 4000:4000
+    - run --rm \   --volume "$PWD:/srv/jekyll" \   --publish 4000:4000
       \   --publish 35729:35729 \   jekyll/jekyll \   jekyll serve
