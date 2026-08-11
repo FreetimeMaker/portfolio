@@ -1,15 +1,20 @@
-# The Docker image that will be used to build your app
-create-pages:
-  pages:
-    # The folder that contains the files to be exposed at the Page URL
-    publish: ./
-  rules:
-    # This ensures that only pushes to the default branch will trigger
-    # a pages deploy
-    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
-  # Functions that should be executed before the build script is run
-  before_script:
-    - ":"
+variables:
+  JEKYLL_ENV: production
+
+stages:
+  - build
+
+pages:
+  stage: build
   script:
-    - jekyll build
-    - jekyll serve
+    - bundle config set --local path 'vendor/bundle'
+    - bundle install
+
+    - bundle exec jekyll build -d public
+    
+  artifacts:
+    paths:
+      - public
+      
+  only:
+    - main
