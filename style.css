@@ -38,6 +38,12 @@ div {
     margin: 10px;
 }
 
+.projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media screen and (max-width: 480px) {
   img {
     max-width: 35.3625px;
