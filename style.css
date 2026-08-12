@@ -3,6 +3,7 @@ body {
     color: white;
 }
 
+
 h1 {
     text-align: center;
 }
@@ -39,6 +40,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 div {
@@ -49,6 +51,7 @@ div {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 @media screen and (max-width: 480px) {
@@ -125,4 +128,317 @@ div {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+}
+
+.title {
+    opacity: 0;
+    animation: change-opacity-to-1 1.75s ease both;
+}
+
+@keyframes change-opacity-to-1 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.welcome {
+    opacity: 0;
+    animation: change-opacity-to-1 1.75s ease forwards;
+    animation-delay: 1s;
+}
+
+.langstitle {
+    opacity: 0;
+    animation: change-opacity-to-1 1.75s ease forwards;
+    animation-delay: 2s;
+}
+
+.langscontainer {
+    opacity: 0;
+    animation: change-opacity-to-1 1.75s ease forwards;
+    animation-delay: 3s;
+}
+
+.java {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.javapic {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.javatxt {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.java:hover .javatxt {
+    opacity: 1;
+    visibility: visible;
+}
+
+.java:hover .javapic {
+    transform: scale(1.1);
+}
+
+.html {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.htmlpic {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.htmltxt {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.html:hover .htmltxt {
+    opacity: 1;
+    visibility: visible;
+}
+
+.html:hover .htmlpic {
+    transform: scale(1.1);
+}
+
+.cs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.cspic {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.cstxt {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.cs:hover .cstxt {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cs:hover .cspic {
+    transform: scale(1.1);
+}
+
+.css {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.csspic {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.css:hover .csstxt {
+    opacity: 1;
+    visibility: visible;
+}
+
+.css:hover .csspic {
+    transform: scale(1.1);
+}
+
+.gh {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.ghpic {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.ghtxt {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.gh:hover .ghtxt {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gh:hover .ghpic {
+    transform: scale(1.1);
+}
+
+.git {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.gitpic {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.gittxt {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.git:hover .gittxt {
+    opacity: 1;
+    visibility: visible;
+}
+
+.git:hover .gitpic {
+    transform: scale(1.1);
+}
+
+.gitlab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.gitlabpic {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.gitlabtxt {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.gitlab:hover .gitlabtxt {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gitlab:hover .gitlabpic {
+    transform: scale(1.1);
+}
+
+.kt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.ktpic {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.kttxt {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.kt:hover .kttxt {
+    opacity: 1;
+    visibility: visible;
+}
+
+.kt:hover .ktpic {
+    transform: scale(1.1);
+}
+
+.linux {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.linuxpic {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.linuxtxt {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.linux:hover .linuxtxt {
+    opacity: 1;
+    visibility: visible;
+}
+
+.linux:hover .linuxpic {
+    transform: scale(1.1);
+}
+
+.langstxt {
+    opacity: 0;
+}
+
+@keyframes change-opacity-to-0 {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.projectstitle {
+    opacity: 0;
 }
