@@ -446,6 +446,12 @@ div {
     }
 }
 
-.projectstitle {
+.projectstitle .projectscontainer .projects {
     opacity: 0;
+    animation-timeline: view();
+    animation-name: fade-scroll;
+    animation-fill-mode: both;
+    animation: fadeIn linear both, fadeOut linear both;
+    animation-range: entry -100% entry 20%, exit 80% exit 100%;
 }
+
