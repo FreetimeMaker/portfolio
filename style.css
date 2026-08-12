@@ -12,7 +12,14 @@ p {
     font-size: 20px;
 }
 
-img {
+.langs img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.projects img {
     max-width: 250px;
     height: auto;
     border-radius: 50%;
@@ -60,4 +67,62 @@ div {
   h2 {
     font-size: 9px;
   }
+
+  .langs img {
+    max-width: 35.3625px;
+  }
+
+  .projects img {
+    max-width: 35.3625px;
+  }
+}
+
+.geoweatheractionspics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.geoweatheractionspics img {
+    max-width: 250px;
+    height: auto;
+    margin: 10px;
+}
+
+.ssmpcactionspics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.ssmpcactionspics img {
+    max-width: 250px;
+    height: auto;
+    margin: 10px;
+}
+
+.geoweatherlink a {
+    color: rgba(96, 12, 141, 0.8);
+    text-decoration: none;
+}
+
+.ssmpclink a {
+    color: rgba(208, 127, 71, 0.8);
+    text-decoration: none;
+}
+
+.freetimesdklink a {
+    color: rgba(0, 128, 0, 0.8);
+    text-decoration: none;
+}
+
+.projectlinksdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
