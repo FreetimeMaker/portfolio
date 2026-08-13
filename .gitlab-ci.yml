@@ -3,8 +3,9 @@ pages:
   script:
     - mkdir -p public
 
-    - cp -r *.html *.css public/
+    - cp -r *.html *.css *.js public/
     - cp -r images/ public/
+    - cp -r favicons/ public/
 
   artifacts:
     paths:
