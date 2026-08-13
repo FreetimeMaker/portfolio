@@ -5,6 +5,8 @@
     --gw-txt: rgba(96, 12, 141, 0.8);
     --ssmpc-txt: rgba(208, 127, 71, 0.8);
     --fsdk-txt: rgba(0, 128, 0, 0.8);
+    --button-bg: #111111;
+    --button-text: #eeeeee;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,7 +17,48 @@
     --gw-txt: rgba(12, 141, 89, 0.8);
     --ssmpc-txt: rgb(255, 0, 0);
     --fsdk-txt: rgb(0, 30, 255);
+    --button-bg: #eeeeee;
+    --button-text: #111111;
   }
+}
+
+html.dark {
+    --bg: linear-gradient(90deg,rgba(255, 158, 158, 1) 0%, rgba(143, 255, 156, 1) 100%);
+    --text: black;
+    --img-bg: rgba(0, 0, 0, 0.4);
+    --gw-txt: rgba(12, 141, 89, 0.8);
+    --ssmpc-txt: rgb(255, 0, 0);
+    --fsdk-txt: rgb(0, 30, 255);
+    --button-bg: #eeeeee;
+    --button-text: #111111;
+}
+
+/* Manueller Light Mode */
+html.light {
+    --bg: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    --text: white;
+    --img-bg: rgba(255, 255, 255, 0.4);
+    --gw-txt: rgba(96, 12, 141, 0.8);
+    --ssmpc-txt: rgba(208, 127, 71, 0.8);
+    --fsdk-txt: rgba(0, 128, 0, 0.8);
+    --button-bg: #111111;
+    --button-text: #eeeeee;
+}
+
+.darkmodebtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    padding: 10px 16px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.darkmodebtn:hover {
+    opacity: 0.8;
 }
 
 body {
