@@ -6,8 +6,6 @@ pages:
     - cp -r *.html *.css *.js public/
     - cp -r images/ public/
     - cp -r favicons/ public/
-    - cp -r favicons/favicon.ico favicons/android-chrome-192x192.png /favicons/android-chrome-512x512.png apple-touch-icon.png favicon-16x16.png favicon-32x32.png site.webmanifest public/
-
   artifacts:
     paths:
       - public
