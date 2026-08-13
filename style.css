@@ -32,6 +32,7 @@ h2 {
 }
 
 footer {
+    color: black;
     text-align: center;
     margin-top: 25px;
 }
@@ -130,45 +131,6 @@ div {
     margin-top: 10px;
 }
 
-.welcome, .langstitle, .langscontainer, .projectstitle, .title {
-  opacity: 0;
-  animation-timeline: view();
-  animation-name: fade-scroll;
-  animation-fill-mode: both;
-  animation: fadeIn linear both, fadeOut linear both;
-  animation-range: entry -100% entry 20%, exit 80% exit 100%;
-}
-
-@keyframes fade-scroll {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.welcome, .langstitle, .langscontainer, .projectstitle, .title {
-  opacity: 1;
-  animation-timeline: view();
-  animation-name: fade-exit;
-  animation-fill-mode: both;
-  animation-range: exit 0% exit 100%;
-}
-
-@keyframes fade-exit {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-}
-
 .java {
     display: flex;
     flex-direction: column;
@@ -177,7 +139,7 @@ div {
     position: relative;
 }
 
-.javapic {
+.javapic{
     display: block;
     max-width: 250px;
     height: auto;
@@ -485,4 +447,432 @@ div {
     opacity: 0;
     animation: change-opacity-to-1 1.75s ease forwards;
     animation-delay: 3s;
+}
+
+.projectstitle {
+    animation: text-appear ease-in both;
+    animation-timeline: view();
+    animation-range: 0vh 70vh;
+}
+
+.projectscontainer {
+    animation: image-appear ease-in both;
+    animation-timeline: view();
+    animation-range: entry 50% 100vh;
+}
+
+.ssmpcandlinks {
+    animation: image-appear ease-in both;
+    animation-timeline: view();
+    animation-range: entry 50% 100vh;
+}
+
+.projectstxt {
+    opacity: 0;
+}
+
+@prefers-reduced-motion {
+    projectstitle, projectscontainer, projectsactiontitle, projectsaction, projectlinkstitle, projectlinksdiv  {
+        animation: none;
+    }
+}
+
+@keyframes image-appear {
+    from {
+        filter: saturate(0) contrast(4) brightness(.1) blur(3px);
+        opacity: 0;
+        scale: .95;
+        translate: 0 4rem;
+    }
+}
+
+@keyframes text-appear {
+    from {
+        opacity: 0;
+        translate: 0 8rem;
+    }
+}
+
+.projectsactiontitle {
+    animation: text-appear ease-in both;
+    animation-timeline: view();
+    animation-range: 0vh 70vh;
+}
+
+.geoweatheractionspics {
+    animation: image-appear ease-in both;
+    animation-timeline: view();
+    animation-range: entry 50% 100vh;
+}
+
+.ssmpcactionspics {
+    animation: image-appear ease-in both;
+    animation-timeline: view();
+    animation-range: entry 50% 100vh;
+}
+
+.geoweather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.geoweatherpic {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.geoweathertxt {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.geoweather:hover .geoweathertxt {
+    opacity: 1;
+    visibility: visible;
+}
+
+.geoweather:hover .geoweatherpic {
+    transform: scale(1.1);
+}
+
+.ssmpc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.ssmpcpic {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.ssmpctxt {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.ssmpc:hover .ssmpctxt {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ssmpc:hover .ssmpcpic {
+    transform: scale(1.1);
+}
+
+.freetimesdk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.freetimesdkpic {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.freetimesdktxt {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.freetimesdk:hover .freetimesdktxt {
+    opacity: 1;
+    visibility: visible;
+}
+
+.freetimesdk:hover .freetimesdkpic {
+    transform: scale(1.1);
+}
+    
+.geoweatheractionsdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.geoweatheractiontxts {
+    opacity: 0;
+}
+
+.geoweatheractiondiv1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.geoweatheractionpic1 {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.geoweatheractiontxt1 {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.geoweatheractiondiv1:hover .geoweatheractiontxt1 {
+    opacity: 1;
+    visibility: visible;
+}
+
+.geoweatheractiondiv1:hover .geoweatheractionpic1 {
+    transform: scale(1.1);
+}
+
+.geoweatheractiondiv2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.geoweatheractionpic2 {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.geoweatheractiontxt2 {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.geoweatheractiondiv2:hover .geoweatheractiontxt2 {
+    opacity: 1;
+    visibility: visible;
+}
+
+.geoweatheractiondiv2:hover .geoweatheractionpic2 {
+    transform: scale(1.1);
+}
+
+.geoweatheractiondiv3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.geoweatheractionpic3 {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.geoweatheractiontxt3 {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.geoweatheractiondiv3:hover .geoweatheractiontxt3 {
+    opacity: 1;
+    visibility: visible;
+}
+
+.geoweatheractiondiv3:hover .geoweatheractionpic3 {
+    transform: scale(1.1);
+}
+
+.geoweatheractiondiv4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.geoweatheractionpic4 {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.geoweatheractiontxt4 {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.geoweatheractiondiv4:hover .geoweatheractiontxt4 {
+    opacity: 1;
+    visibility: visible;
+}
+
+.geoweatheractiondiv4:hover .geoweatheractionpic4 {
+    transform: scale(1.1);
+}
+
+.ssmpcactionsdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+
+.ssmpcaction1 {
+    text-align: center;
+    display: inline-block;
+}
+
+.ssmpcaction1 img {
+    display: block;
+    margin: 0 auto;
+}
+
+.ssmpcaction1 h2 {
+    max-width: 250px;
+    margin: 30px auto;
+}
+
+.ssmpcaction2 {
+    text-align: center;
+    display: inline-block;
+}
+
+.ssmpcaction2 img {
+    display: block;
+    margin: 0 auto;
+}
+
+.ssmpcaction2 h2 {
+    max-width: 250px;
+    margin: 30px auto;
+}
+
+.ssmpcaction3 {
+    text-align: center;
+    display: inline-block;
+}
+
+.ssmpcaction3 img {
+    display: block;
+    margin: 0 auto;
+}
+
+.ssmpcaction3 h2 {
+    max-width: 250px;
+    margin-top: 96.25px;
+}
+
+.ssmpcaction1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.ssmpcactionpic1 {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.ssmpcactiontxt1 {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.ssmpcaction1:hover .ssmpcactiontxt1 {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ssmpcaction1:hover .ssmpcactionpic1 {
+    transform: scale(1.1);
+}
+
+.ssmpcaction2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.ssmpcactionpic2 {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.ssmpcactiontxt2 {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.ssmpcaction2:hover .ssmpcactiontxt2 {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ssmpcaction2:hover .ssmpcactionpic2 {
+    transform: scale(1.1);
+}
+
+.ssmpcaction3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.ssmpcactionpic3 {
+    display: block;
+    max-width: 250px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.ssmpcactiontxt3 {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.ssmpcaction3:hover .ssmpcactiontxt3 {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ssmpcaction3:hover .ssmpcactionpic3 {
+    transform: scale(1.1);
 }
