@@ -1,6 +1,26 @@
+:root {
+    --bg: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    --text: white;
+    --img-bg: rgba(255, 255, 255, 0.4);
+    --gw-txt: rgba(96, 12, 141, 0.8);
+    --ssmpc-txt: rgba(208, 127, 71, 0.8);
+    --fsdk-txt: rgba(0, 128, 0, 0.8);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: linear-gradient(90deg,rgba(255, 158, 158, 1) 0%, rgba(143, 255, 156, 1) 100%);
+    --text: black;
+    --img-bg: rgba(0, 0, 0, 0.4);
+    --gw-txt: rgba(12, 141, 89, 0.8);
+    --ssmpc-txt: rgb(255, 0, 0);
+    --fsdk-txt: rgb(0, 30, 255);
+  }
+}
+
 body {
-    background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
-    color: white;
+    background: var(--bg);
+    color: var(--text);
 }
 
 
@@ -17,14 +37,14 @@ p {
     max-width: 250px;
     height: auto;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: var(--img-bg);
 }
 
 .projects img {
     max-width: 250px;
     height: auto;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: var(--img-bg);
 }
 
 h2 {
@@ -109,17 +129,17 @@ div {
 }
 
 .geoweatherlink a {
-    color: rgba(96, 12, 141, 0.8);
+    color: var(gw-txt);
     text-decoration: none;
 }
 
 .ssmpclink a {
-    color: rgba(208, 127, 71, 0.8);
+    color: var(--ssmpc-txt);
     text-decoration: none;
 }
 
 .freetimesdklink a {
-    color: rgba(0, 128, 0, 0.8);
+    color: var(--fsdk-txt);
     text-decoration: none;
 }
 
