@@ -118,6 +118,14 @@ div {
     gap: 20px;
 }
 
+.kontaktieren {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
 @media screen and (max-width: 480px) {
     .langs,
     .langscontainer,
