@@ -138,7 +138,8 @@ div {
     .gitlab,
     .kt,
     .linux,
-    .projectlinksdiv {
+    .projectlinksdiv,
+    .kontaktieren {
         flex-direction: column;
     }
 
@@ -205,7 +206,8 @@ div {
     .gitlab,
     .kt,
     .linux,
-    .projectlinksdiv {
+    .projectlinksdiv,
+    .kontaktieren {
         flex-direction: row;
     }
 
@@ -250,22 +252,22 @@ div {
     margin: 10px;
 }
 
-.geoweatherlink a {
+.geoweatherlink {
     color: var(--gw-txt);
     text-decoration: none;
 }
 
-.kontaktierenlink a {
+.kontaktierenlink {
     color: var(--cont-txt);
     text-decoration: none;
 }
 
-.ssmpclink a {
+.ssmpclink {
     color: var(--ssmpc-txt);
     text-decoration: none;
 }
 
-.freetimesdklink a {
+.freetimesdklink {
     color: var(--fsdk-txt);
     text-decoration: none;
 }
