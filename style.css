@@ -7,7 +7,6 @@
     --fsdk-txt: rgba(0, 128, 0, 0.8);
     --button-bg: #111111;
     --button-text: #eeeeee;
-    --cont-txt: rgba(255, 0, 0, 0.8);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +19,6 @@
         --fsdk-txt: rgb(0, 30, 255, 0.8);
         --button-bg: #eeeeee;
         --button-text: #111111;
-        --cont-txt: rgb(95 0 0 / 0.8);
     }
 }
 
@@ -33,7 +31,6 @@ html.dark {
     --fsdk-txt: rgb(0, 30, 255);
     --button-bg: #eeeeee;
     --button-text: #111111;
-    --cont-txt: rgb(95 0 0 / 0.8);
 }
 
 /* Manueller Light Mode */
@@ -46,7 +43,6 @@ html.light {
     --fsdk-txt: rgba(0, 128, 0, 0.8);
     --button-bg: #111111;
     --button-text: #eeeeee;
-    --cont-txt: rgba(255, 0, 0, 0.8);
 }
 
 .darkmodebtn {
@@ -254,11 +250,6 @@ div {
 
 .geoweatherlink {
     color: var(--gw-txt);
-    text-decoration: none;
-}
-
-.kontaktierenlink {
-    color: var(--cont-txt);
     text-decoration: none;
 }
 

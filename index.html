@@ -171,9 +171,18 @@
         </div>
         <h1 class="Kontaktieren">Kontaktieren sie mich hier</h1>
         <div class="kontaktieren">
-            <h2>
-                <a class="kontaktierenlink" href="mailto:FreetimeMaker@proton.me?subject=Projekt%20Anfrage&body=Hallo" target="_blank" title="Senden sie mir eine E-Mail.">Senden sie mir eine E-Mail.</a>
-            </h2>
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                Name: <input type="text" name="name">
+                <span class="error">* <?php echo $nameErr;?></span>
+                <br><br>
+                E-mail:
+                <input type="text" name="email">
+                <span class="error">* <?php echo $emailErr;?></span>
+                <br><br>
+                Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+                <br><br>
+                <input type="submit" name="submit" value="Submit">
+            </form>
         </div>
         <footer>
             <p>&copy;  2026 FreetimeMaker</p>
