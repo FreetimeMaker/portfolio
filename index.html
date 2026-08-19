@@ -171,17 +171,22 @@
         </div>
         <h1 class="Kontaktieren">Kontaktieren sie mich hier</h1>
         <div class="kontaktieren">
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER[PHP_SELF"]);?>
-                Name: <input type="text" name="name">
-                <span class="error">* <?php echo $nameErr;?></span>
-                <br><br>
-                E-mail:
-                <input type="text" name="email">
-                <span class="error">* <?php echo $emailErr;?></span>
-                <br><br>
-                Comment: <textarea name="comment" rows="5" cols="40"></textarea>
-                <br><br>
-                <input type="submit" name="submit" value="Submit">
+            <form class="contact-form" method="post" action="form.php">
+                <div class="form-row">
+                    <label for="name">Name:</label>
+                    <input id="name" type="text" name="name" required>
+                </div>
+                <div class="form-row">
+                    <label for="email">E-mail:</label>
+                    <input id="email" type="email" name="email" required>
+                </div>
+                <div class="form-row comment-row">
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" rows="5" cols="40" required></textarea>
+                </div>
+                <div class="form-row submit-row">
+                    <input type="submit" name="submit" value="Submit">
+                </div>
             </form>
         </div>
         <footer>
