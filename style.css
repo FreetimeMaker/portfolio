@@ -733,20 +733,6 @@ div {
     animation-range: entry 50% 100vh;
 }
 
-.formluar {
-    opacity: 0;
-    animation: image-appear ease-in both;
-    animation-timeline: view();
-    animation-range: entry 50% 100vh;
-}
-
-.kontaktieren {
-    opacity: 0;
-    animation: text-appear ease-in both;
-    animation-timeline: view();
-    animation-range: entry 50% 100vh;
-}
-
 .ssmpcandlinks {
     animation: image-appear ease-in both;
     animation-timeline: view();
