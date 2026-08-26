@@ -733,6 +733,10 @@ div {
     animation-range: entry 50% 100vh;
 }
 
+.mail {
+    text-align: center;
+}
+
 .ssmpcandlinks {
     animation: image-appear ease-in both;
     animation-timeline: view();
