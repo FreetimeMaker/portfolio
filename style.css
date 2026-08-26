@@ -7,6 +7,7 @@
     --fsdk-txt: rgba(0, 128, 0, 0.8);
     --button-bg: #111111;
     --button-text: #eeeeee;
+    --mail-text: rgba(255, 127, 141, 0.8);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -137,6 +138,11 @@ div {
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(4px);
+}
+
+.mail {
+    color: var(--mail-text);
+    text-decoration: none;
 }
 
 .form-row {
