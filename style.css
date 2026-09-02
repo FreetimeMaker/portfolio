@@ -21,7 +21,7 @@
         --fsdk-txt: rgb(0, 30, 255, 0.8);
         --button-bg: #eeeeee;
         --button-text: #111111;
-        --backbtn: rgba(255, 12, 0, 0.8);
+        --backbtn: rgba(122.5, 12, 0, 0.8);
     }
 }
 
@@ -34,7 +34,7 @@ html.dark {
     --fsdk-txt: rgb(0, 30, 255);
     --button-bg: #eeeeee;
     --button-text: #111111;
-    --backbtn: rgba(255, 12, 0, 0.8);
+    --backbtn: rgba(122.5, 12, 0, 0.8);
 }
 
 /* Manueller Light Mode */
@@ -113,6 +113,11 @@ footer {
 
 div {
     margin: 10px;
+}
+
+.backbtn {
+    color: var(--backbtn);
+    text-decoration: none;
 }
 
 .projects {
@@ -898,6 +903,8 @@ div {
 .geoweatheractionsdiv {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -915,6 +922,8 @@ div {
 
 .geoweatheractionpic1 {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 250px;
     height: auto;
     transition: transform 0.3s ease;
@@ -945,6 +954,8 @@ div {
 
 .geoweatheractionpic2 {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 250px;
     height: auto;
     transition: transform 0.3s ease;
@@ -975,6 +986,8 @@ div {
 
 .geoweatheractionpic3 {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 250px;
     height: auto;
     transition: transform 0.3s ease;
@@ -1005,6 +1018,8 @@ div {
 
 .geoweatheractionpic4 {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 250px;
     height: auto;
     transition: transform 0.3s ease;
@@ -1028,6 +1043,8 @@ div {
 .ssmpcactionsdiv {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -1087,6 +1104,8 @@ div {
 
 .ssmpcactionpic1 {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 250px;
     height: auto;
     transition: transform 0.3s ease;
@@ -1117,6 +1136,8 @@ div {
 
 .ssmpcactionpic2 {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 250px;
     height: auto;
     transition: transform 0.3s ease;
@@ -1147,6 +1168,8 @@ div {
 
 .ssmpcactionpic3 {
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 250px;
     height: auto;
     transition: transform 0.3s ease;
