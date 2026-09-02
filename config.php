@@ -1,22 +1,21 @@
 <?php
-$dbHost = getenv('DB_HOST') ?: 'db.us-losa1.bengt.wasmernet.com';
-$dbPort = getenv('DB_PORT') ?: '16751';
-$dbName = getenv('DB_NAME') ?: 'db_f332bb08';
-$dbUser = getenv('DB_USER') ?: 'user_ead4230b';
-$dbPass = getenv('DB_PASS') ?: 'pw_vGenSvgsdkU3hrSGpOpyfqilrBbGugKv';
+// Supabase PostgreSQL Konfiguration
+$dbHost = getenv('SUPABASE_HOST') ?: getenv('DB_HOST') ?: 'localhost';
+$dbPort = getenv('SUPABASE_PORT') ?: getenv('DB_PORT') ?: '5432';
+$dbName = getenv('SUPABASE_DB') ?: getenv('DB_NAME') ?: 'postgres';
+$dbUser = getenv('SUPABASE_USER') ?: getenv('DB_USER') ?: 'postgres';
+$dbPass = getenv('SUPABASE_PASSWORD') ?: getenv('DB_PASS') ?: '';
 
-$pdoDrivers = extension_loaded('pdo_mysql') ? ['mysql'] : [];
-$mysqlSupported = in_array('mysql', PDO::getAvailableDrivers(), true);
-
+// PostgreSQL DSN (Supabase standard)
 if (getenv('DB_DSN')) {
     $dbDsn = getenv('DB_DSN');
-} elseif ($mysqlSupported) {
+} else {
     $dbDsn = sprintf(
-        'mysql:host=%s;port=%s;dbname=%s;charset=utf8mb4',
+        'pgsql:host=%s;port=%s;dbname=%s;user=%s;password=%s',
         $dbHost,
         $dbPort,
-        $dbName
+        $dbName,
+        $dbUser,
+        $dbPass
     );
-} else {
-    $dbDsn = 'sqlite:' . __DIR__ . '/db/contact.sqlite';
 }

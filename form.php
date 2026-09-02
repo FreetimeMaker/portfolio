@@ -30,6 +30,11 @@ function connectDatabase(): PDO
         PDO::ATTR_EMULATE_PREPARES => false,
     ];
 
+    // Supabase PostgreSQL connection
+    if (str_starts_with(strtolower($dsn), 'pgsql:')) {
+        return new PDO($dsn, null, null, $options);
+    }
+
     if (str_starts_with(strtolower($dsn), 'sqlite:')) {
         return new PDO($dsn, null, null, $options);
     }
@@ -46,6 +51,21 @@ function ensureContactTable(PDO $pdo): void
 {
     $driver = strtolower($pdo->getAttribute(PDO::ATTR_DRIVER_NAME));
 
+    if ($driver === 'pgsql') {
+        $pdo->exec(
+            'CREATE TABLE IF NOT EXISTS contact_messages (
+                id SERIAL PRIMARY KEY,
+                name VARCHAR(120) NOT NULL,
+                email VARCHAR(180) NOT NULL,
+                comment TEXT NOT NULL,
+                created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+            )'
+        );
+        // Erstelle Index für E-Mail-Suchen
+        $pdo->exec('CREATE INDEX IF NOT EXISTS idx_email ON contact_messages(email)');
+        return;
+    }
+
     if ($driver === 'sqlite') {
         $pdo->exec(
             'CREATE TABLE IF NOT EXISTS contact_messages (
@@ -59,6 +79,7 @@ function ensureContactTable(PDO $pdo): void
         return;
     }
 
+    // MySQL/MariaDB
     $pdo->exec(
         'CREATE TABLE IF NOT EXISTS contact_messages (
             id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -101,16 +122,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $pdo = connectDatabase();
             ensureContactTable($pdo);
 
-            $driver = strtolower($pdo->getAttribute(PDO::ATTR_DRIVER_NAME));
-            if ($driver === 'sqlite') {
-                $stmt = $pdo->prepare(
-                    'INSERT INTO contact_messages (name, email, comment, created_at) VALUES (:name, :email, :comment, CURRENT_TIMESTAMP)'
-                );
-            } else {
-                $stmt = $pdo->prepare(
-                    'INSERT INTO contact_messages (name, email, comment, created_at) VALUES (:name, :email, :comment, NOW())'
-                );
-            }
+            // Alle SQL-Dialekte unterstützen diese Syntax
+            $stmt = $pdo->prepare(
+                'INSERT INTO contact_messages (name, email, comment, created_at) VALUES (:name, :email, :comment, CURRENT_TIMESTAMP)'
+            );
 
             $stmt->execute([
                 ':name' => $name,
@@ -119,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ]);
             $success = true;
         } catch (Throwable $e) {
-            $dbError = 'DB-Fehler: ' . $e->getMessage() . ' (Driver: ' . $driver ?? 'unknown' . ')';
+            $dbError = 'DB-Fehler: ' . $e->getMessage();
         }
     }
 }
