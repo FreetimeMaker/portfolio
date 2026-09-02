@@ -10,7 +10,8 @@
           "style.css",
           "script.js",
           "images/**",
-          "favicons/**"
+          "favicons/**",
+          "*.php"
         ]
       }
     }
