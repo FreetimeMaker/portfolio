@@ -1,5 +1,5 @@
 import express from 'express';
-import { supabase } from './lib/supabase';
+import { supabase } from './lib/supabase.js';
 import { Resend } from 'resend';
 
 const app = express();
@@ -9,6 +9,10 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.post('/api/contact', async (req, res) => {
   try {
+    if (!supabase) {
+      return res.status(500).json({ error: 'Supabase ist nicht konfiguriert.' });
+    }
+
     const { name, email, message, company } = req.body;
 
     // 1. Honeypot-Check gegen Spam (Silent Fail für Bots)
