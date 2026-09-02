@@ -1,5 +1,6 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const fs = require('fs');
 const path = require('path');
 
 const app = express();
@@ -8,6 +9,17 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '.')));
+
+app.get(/^\/(style\.css|script\.js|favicons\/.+|images\/.+)$/, (req, res, next) => {
+  const filePath = decodeURIComponent(req.path.replace(/^\//, ''));
+  const fullPath = path.join(__dirname, filePath);
+
+  if (fullPath.startsWith(__dirname) && fs.existsSync(fullPath) && fs.statSync(fullPath).isFile()) {
+    return res.sendFile(fullPath);
+  }
+
+  return next();
+});
 
 // Middleware to set dark mode from cookie
 app.use((req, res, next) => {
