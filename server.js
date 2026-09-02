@@ -8,8 +8,6 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '.')));
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
 
 // Middleware to set dark mode from cookie
 app.use((req, res, next) => {
@@ -17,17 +15,17 @@ app.use((req, res, next) => {
   next();
 });
 
-// Routes
+// Routes to serve the existing HTML files directly
 app.get('/', (req, res) => {
-  res.render('index');
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/geoweather', (req, res) => {
-  res.render('geoweather');
+  res.sendFile(path.join(__dirname, 'geoweather.html'));
 });
 
 app.get('/ssmpc', (req, res) => {
-  res.render('ssmpc');
+  res.sendFile(path.join(__dirname, 'ssmpc.html'));
 });
 
 // API endpoint to toggle dark mode
@@ -45,7 +43,7 @@ app.post('/api/toggle-darkmode', (req, res) => {
 
 // 404 handler
 app.use((req, res) => {
-  res.status(404).render('404');
+  res.status(404).send('404 - Seite nicht gefunden');
 });
 
 app.listen(PORT, () => {

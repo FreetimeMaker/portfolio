@@ -1,6 +1,6 @@
 :root {
     --bg: linear-gradient(90deg,rgba(255, 158, 158, 1) 0%, rgba(143, 255, 156, 1));
-    --text: white;
+    --text: black;
     --img-bg: rgba(255, 255, 255, 0.4);
     --gw-txt: rgba(96, 12, 141, 0.8);
     --ssmpc-txt: rgba(208, 127, 71, 0.8);
@@ -14,7 +14,7 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --bg: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
-        --text: black;
+        --text: white;
         --img-bg: rgba(0, 0, 0, 0.4);
         --gw-txt: rgba(12, 141, 89, 0.8);
         --ssmpc-txt: rgb(255, 0, 0, 0.8);
@@ -27,7 +27,7 @@
 
 html.dark {
     --bg: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
-    --text: black;
+    --text: white;
     --img-bg: rgba(0, 0, 0, 0.4);
     --gw-txt: rgba(12, 141, 89, 0.8);
     --ssmpc-txt: rgb(255, 0, 0);
@@ -40,7 +40,7 @@ html.dark {
 /* Manueller Light Mode */
 html.light {
     --bg: linear-gradient(90deg,rgba(255, 158, 158, 1) 0%, rgba(143, 255, 156, 1));
-    --text: white;
+    --text: black;
     --img-bg: rgba(255, 255, 255, 0.4);
     --gw-txt: rgba(96, 12, 141, 0.8);
     --ssmpc-txt: rgba(208, 127, 71, 0.8);
@@ -124,6 +124,14 @@ div {
 }
 
 .kontaktieren {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formular {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -243,7 +251,8 @@ div {
     .kt,
     .linux,
     .projectlinksdiv,
-    .kontaktieren {
+    .kontaktieren,
+    .formular {
         flex-direction: column;
     }
 
@@ -340,7 +349,8 @@ div {
     .kt,
     .linux,
     .projectlinksdiv,
-    .kontaktieren {
+    .kontaktieren,
+    .formular {
         flex-direction: row;
     }
 
