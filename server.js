@@ -58,6 +58,10 @@ app.use((req, res) => {
   res.status(404).send('404 - Seite nicht gefunden');
 });
 
-app.listen(PORT, () => {
-  console.log(`Portfolio server running on http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Portfolio server running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
