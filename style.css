@@ -8,6 +8,7 @@
     --button-bg: #111111;
     --button-text: #eeeeee;
     --mail-text: rgba(255, 127, 141, 0.8);
+    --backbtn: rgba(208, 12, 255, 0.8);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,6 +21,7 @@
         --fsdk-txt: rgb(0, 30, 255, 0.8);
         --button-bg: #eeeeee;
         --button-text: #111111;
+        --backbtn: rgba(255, 12, 0, 0.8);
     }
 }
 
@@ -32,6 +34,7 @@ html.dark {
     --fsdk-txt: rgb(0, 30, 255);
     --button-bg: #eeeeee;
     --button-text: #111111;
+    --backbtn: rgba(255, 12, 0, 0.8);
 }
 
 /* Manueller Light Mode */
@@ -44,6 +47,7 @@ html.light {
     --fsdk-txt: rgba(0, 128, 0, 0.8);
     --button-bg: #111111;
     --button-text: #eeeeee;
+    --backbtn: rgba(208, 12, 255, 0.8);
 }
 
 .darkmodebtn {
