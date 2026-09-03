@@ -1,13 +1,15 @@
 <?php
-$dbDsn = getenv('DB_DSN') ?: null;
-$dbUser = getenv('DB_USER') ?: null;
-$dbPass = getenv('DB_PASS') ?: null;
-
-if (!$dbDsn && getenv('DB_HOST')) {
-    $dbDsn = sprintf(
-        'pgsql:host=%s;port=%s;dbname=%s;sslmode=require',
-        getenv('DB_HOST'),
-        getenv('DB_PORT') ?: '5432',
-        getenv('DB_NAME') ?: 'postgres'
-    );
+$envFile = __DIR__ . '/.env';
+if (is_readable($envFile)) {
+    $envValues = parse_ini_file($envFile, false, INI_SCANNER_RAW) ?: [];
+    foreach ($envValues as $name => $value) {
+        if (getenv($name) === false) {
+            putenv($name . '=' . $value);
+        }
+    }
 }
+
+$supabaseUrl = getenv('NEXT_PUBLIC_SUPABASE_URL') ?: null;
+$supabaseKey = getenv('NEXT_PUBLIC_SUPABASE_ANON_KEY') ?: null;
+$resendApiKey = getenv('RESEND_API_KEY') ?: null;
+$protonEmail = getenv('PROTON_EMAIL') ?: null;

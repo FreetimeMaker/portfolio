@@ -286,6 +286,14 @@ div {
     font-weight: 600;
 }
 
+.company-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 @media screen and (max-width: 480px) {
     .langs,
     .langscontainer,
