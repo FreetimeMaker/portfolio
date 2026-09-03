@@ -20,7 +20,7 @@ const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KE
 app.post('/api/contact', async (req, res) => {
   try {
     if (!supabase) {
-      return res.status(500).json({ error: 'Supabase ist nicht konfiguriert.' });
+      return res.redirect('/contact-error.html');
     }
 
     const { name, email, company } = req.body;
@@ -28,12 +28,12 @@ app.post('/api/contact', async (req, res) => {
 
     // 1. Honeypot-Check gegen Spam (Silent Fail für Bots)
     if (company && company.trim() !== '') {
-      return res.status(200).json({ success: true });
+      return res.redirect('/contact-success.html');
     }
 
     // Validierung
     if (!name || !email || !message) {
-      return res.status(400).json({ error: 'Bitte alle Pflichtfelder ausfüllen.' });
+      return res.redirect('/contact-error.html');
     }
 
     // 2. In Supabase speichern
@@ -42,11 +42,11 @@ app.post('/api/contact', async (req, res) => {
       .insert([{ name, email, message }]);
 
     if (dbError) {
-      return res.status(500).json({ error: dbError.message });
+      return res.redirect('/contact-error.html');
     }
 
     if (resend && process.env.PROTON_EMAIL) {
-      await resend.emails.send({
+      const notification = await resend.emails.send({
         from: 'Jamie Achatz (Freetime Maker) <jamieachatz@free-time.me>',
         to: process.env.PROTON_EMAIL,
         replyTo: email,
@@ -60,7 +60,11 @@ app.post('/api/contact', async (req, res) => {
         `,
       });
 
-      await resend.emails.send({
+      if (notification.error) {
+        return res.redirect('/contact-error.html');
+      }
+
+      const confirmation = await resend.emails.send({
         from: 'Jamie Achatz (Freetime Maker) <no-reply@free-time.me>',
         to: email,
         replyTo: process.env.PROTON_EMAIL,
@@ -73,17 +77,29 @@ app.post('/api/contact', async (req, res) => {
           <p>Ihr Jamie Achatz (Freetime Maker)</p>
         `,
       });
+
+      if (confirmation.error) {
+        return res.redirect('/contact-error.html');
+      }
     }
 
-    return res.status(200).json({ success: true });
+    return res.redirect('/contact-success.html');
   } catch (err) {
     console.error('API Error:', err);
-    return res.status(500).json({ error: 'Serverfehler' });
+    return res.redirect('/contact-error.html');
   }
 });
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.get('/contact-success.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'contact-success.html'));
+});
+
+app.get('/contact-error.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'contact-error.html'));
 });
 
 app.get(['/geoweather.html', '/geoweather'], (req, res) => {
@@ -93,6 +109,10 @@ app.get(['/geoweather.html', '/geoweather'], (req, res) => {
 app.get(['/ssmpc.html', '/ssmpc'], (req, res) => {
   res.sendFile(path.join(__dirname, 'ssmpc.html'));
 });
+
+app.get(['/contact.html', '/contact'], (req, res) => {
+  res.sendFile(path.join(__dirname, 'contact.html'));
+}
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

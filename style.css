@@ -71,6 +71,45 @@ body {
     color: var(--text);
 }
 
+.contact-result-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contact-result {
+    width: min(100%, 560px);
+    padding: 36px 24px;
+    text-align: center;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.contact-result h1 {
+    margin-top: 0;
+}
+
+.result-link {
+    display: inline-block;
+    margin-top: 16px;
+    color: var(--text);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.result-link:hover {
+    text-decoration: underline;
+}
+
+.contact-error h1 {
+    color: #b00020;
+}
+
 h1 {
     text-align: center;
 }
