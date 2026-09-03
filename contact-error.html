@@ -15,8 +15,32 @@
     <main class="contact-result contact-error">
         <h1>Bitte versuchen Sie es erneut.</h1>
         <p>Ihre Nachricht konnte leider nicht gesendet werden.</p>
-        <a class="result-link" href="/contact">Zurück zum Kontaktformular</a>
+        <p>Nutzen Sie bitte das Kontaktformular unten, um es erneut zu versuchen.</p>
     </main>
+    <div class="formularmail">
+        <div class="formular">
+            <form class="contact-form" method="post" action="/api/contact">
+                <div class="form-row">
+                    <label for="name">Name:</label>
+                    <input id="name" type="text" name="name" required>
+                </div>
+                <div class="form-row">
+                    <label for="email">E-mail:</label>
+                    <input id="email" type="email" name="email" required>
+                </div>
+                <div class="form-row comment-row">
+                    <label for="comment">Nachricht:</label>
+                    <textarea id="comment" name="message" rows="5" cols="40" required></textarea>
+                </div>
+                <div class="form-row submit-row">
+                    <input type="submit" name="submit" value="Einreichen">
+                </div>
+            </form>
+        </div>
+        <footer>
+            <p>&copy;  2026 FreetimeMaker</p>
+        </footer>
+    </div>
     <script>
         (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="z5-kddSDRP_Lmwaz0Yg3C";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
     </script>
