@@ -47,7 +47,7 @@ app.post('/api/contact', async (req, res) => {
 
     if (resend && process.env.PROTON_EMAIL) {
       await resend.emails.send({
-        from: 'Portfolio Contact <onboarding@resend.dev>',
+        from: 'Jamie Achatz (Freetime Maker) <jamieachatz@free-time.me>',
         to: process.env.PROTON_EMAIL,
         replyTo: email,
         subject: `Neue Portfolio-Anfrage von ${name}`,
@@ -61,7 +61,7 @@ app.post('/api/contact', async (req, res) => {
       });
 
       await resend.emails.send({
-        from: 'Portfolio <onboarding@resend.dev>',
+        from: 'Jamie Achatz (Freetime Maker) <jamieachatz@free-time.me>',
         to: email,
         replyTo: process.env.PROTON_EMAIL,
         subject: 'Bestätigung deiner Kontaktanfrage',
