@@ -70,7 +70,7 @@ app.post('/api/contact', async (req, res) => {
           <p>vielen Dank für deine Nachricht! Ich habe sie erhalten und werde mich so schnell wie möglich bei dir melden.</p>
           <br>
           <p>Viele Grüße,</p>
-          <p>Dein Portfolio-Team</p>
+          <p>Dein Jamie Achatz (Freetime Maker)</p>
         `,
       });
     }
