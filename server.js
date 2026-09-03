@@ -61,7 +61,7 @@ app.post('/api/contact', async (req, res) => {
       });
 
       await resend.emails.send({
-        from: 'Jamie Achatz (Freetime Maker) <jamie.achatz@free-time.me>',
+        from: 'Jamie Achatz (Freetime Maker) <no-reply@free-time.me>',
         to: email,
         replyTo: process.env.PROTON_EMAIL,
         subject: 'Bestätigung Ihre Kontaktanfrage',
