@@ -103,7 +103,7 @@ body {
 }
 
 .result-link:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .contact-error h1 {
