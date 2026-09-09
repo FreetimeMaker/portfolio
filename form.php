@@ -14,9 +14,13 @@ function resultPage(string $title, string $message): never
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{$title}</title>
     <link rel="stylesheet" href="/style.css">
-    <link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png">
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png?v=2">
+    <link rel="manifest" href="/favicons/site.webmanifest?v=2">
 </head>
 <body class="contact-result-page">
+    <button id="darkModeBtn" class="darkmodebtn">🌙 Dark Mode</button>
     <main class="contact-result">
         <h1>{$title}</h1>
         <p>{$message}</p>
